@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objs as go
 import plotly.express as px
-import geopandas as gpd
+
 
 df = pd.read_csv('india.csv')
 df.drop(['Unnamed: 0'], axis=1, inplace=True)
@@ -51,4 +51,5 @@ if btn:
 
 
     if a == 'State':
+
         get_info_state(state,pri,sec)
