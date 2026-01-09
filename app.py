@@ -12,7 +12,7 @@ st.set_page_config(layout='wide')
 def get_info_overall(pri,sec):
     st.write( 'Primary Parameter as size of dots')
     st.write( 'Secondary Parameter as color of dots')
-    fig = px.scatter_map(df, lat="Latitude", lon="Longitude", size_max=15, zoom=5, size=pri, color=sec,height=700,width=1200,map_style="carto-positron",hover_name='District',color_continuous_scale=px.colors.sequential.Plasma)
+    fig = px.scatter_map(df, lat="Latitude", lon="Longitude", size_max=25, zoom=5, size=pri, color=sec,height=700,width=1200,map_style="carto-positron",hover_name='District',color_continuous_scale=px.colors.sequential.Plasma)
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -24,7 +24,7 @@ def get_info_state(state,pri,sec):
     st.write('Primary Parameter as size of dots')
     st.write('Secondary Parameter as color of dots')
     df_state = df[df['State'] == state]
-    fig = px.scatter_map(df_state, lat="Latitude", lon="Longitude", size_max=15, zoom=5, size=pri, color=sec, height=700,
+    fig = px.scatter_map(df_state, lat="Latitude", lon="Longitude", size_max=25, zoom=5, size=pri, color=sec, height=700,
                          width=1200, map_style="carto-positron", hover_name='District',
                          color_continuous_scale=px.colors.sequential.Plasma)
     st.plotly_chart(fig, use_container_width=True)
@@ -53,3 +53,4 @@ if btn:
     if a == 'State':
 
         get_info_state(state,pri,sec)
+
